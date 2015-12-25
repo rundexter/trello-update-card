@@ -5,22 +5,47 @@
     //Required. Inputs the module expects.
     "inputs": [
         //e.g.
-        /*
         {
-            "id": "from",
-            "title":"From"
+            "id": "cardId_shortlink",
+            "title":"Card ID or Shorlink"
+        },
+        {
+            "id": "name",
+            "title":"Name"
+        },
+        {
+            "id": "closed",
+            "title":"Closed?"
+        },
+        {
+            "id": "idMembers",
+            "title":"Members"
+        },
+        {
+            "id": "idList",
+            "title":"List ID"
+        },
+        {
+            "id": "idBoard",
+            "title":"Board ID"
+        },
+        {
+            "id": "pos",
+            "title":"Position"
+        },
+        {
+            "id": "due",
+            "title":"Due"
         }
-        */
     ],
     //Required. Outputs the module emits.
     "outputs": [
       //e.g.
-      /*
         {
-            "id": "from",
-            "title":"From"
+            "id": "success",
+            "title":"Success"
         }
-      */
     ],
-    "title": "Trello Update Card" /* Required.A display name for the module */
+    "icon": "trello",
+    "title": "Trello Update Card Contents" /* Required.A display name for the module */
 }
