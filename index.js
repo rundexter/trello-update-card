@@ -26,15 +26,10 @@ var trello = require('node-trello'),
 
 module.exports = {
     authOptions: function (dexter) {
-        if (!dexter.environment('trello_api_key') || !dexter.environment('trello_token')) {
-            this.fail('A [trello_api_key] or [trello_token] environment variables are required for this module');
-            return false;
-        } else {
-            return {
-                api_key: dexter.environment('trello_api_key'),
-                token: dexter.environment('trello_token')
-            }
-        }
+        return {
+            api_key: dexter.provider('trello').credentials('consumer_key'),
+            token: dexter.provider('trello').credentials('auth_token')
+         }
     },
     /**
      * The main entry point for the Dexter module
