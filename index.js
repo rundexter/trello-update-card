@@ -25,12 +25,6 @@ var trello = require('node-trello'),
     };
 
 module.exports = {
-    authOptions: function (dexter) {
-        return {
-            api_key: dexter.provider('trello').credentials('consumer_key'),
-            token: dexter.provider('trello').credentials('auth_token')
-         }
-    },
     /**
      * The main entry point for the Dexter module
      *
@@ -38,10 +32,8 @@ module.exports = {
      * @param {AppData} dexter Container for all data used in this workflow.
      */
     run: function(step, dexter) {
-        var auth = this.authOptions(dexter);
-
-        if (!auth) return;
-        var t = new trello(auth.api_key, auth.token);
+        var credentials = dexter.provider('trello').credentials(),
+            t = new trello(_.get(credentials, 'consumer_key'), _.get(credentials, 'access_token'));
         var inputs = util.pickInputs(step, pickInputs),
             validateErrors = util.checkValidateErrors(inputs, pickInputs);
 

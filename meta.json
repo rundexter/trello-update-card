@@ -46,6 +46,12 @@
             "title":"Success"
         }
     ],
+    "providers": [{
+        "name": "trello",
+        "scopes": [
+            "Write"
+        ]
+    }],
     "icon": "trello",
     "title": "Trello Update Card Contents" /* Required.A display name for the module */
 }
